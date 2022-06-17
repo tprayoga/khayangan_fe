@@ -29,7 +29,7 @@ const Navbar = () => {
                     <MdKeyboardArrowRight className='text-white text-2xl mb-8'/>
                 </div>
                 <div className='flex justify-between mr-6 cursor-pointer hover:opacity-80' onClick={() => setNavbarOpen(!navbarOpen)}>
-                    <p className='text-white font-semibold'>Data Center</p>
+                    <p className={`text-white ${navbarOpen ? "font-extrabold" : "font-semibold"}`}>Data Center</p>
                     {navbarOpen ? 
                         <MdKeyboardArrowDown className='text-white text-2xl mb-4'/>
                     :
@@ -45,7 +45,7 @@ const Navbar = () => {
                 
 
                 {/* setting */}
-                <div className='flex justify-between mr-6 mt-12 cursor-pointer hover:opacity-80'>
+                <div className='flex justify-between mr-6 mt-12 cursor-pointer'>
                     <p className='text-white font-semibold'>Setting</p>
                     <AiOutlineSetting className='text-white text-lg mb-8'/>
                 </div>

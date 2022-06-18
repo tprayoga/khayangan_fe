@@ -65,7 +65,7 @@ const Navbar = () => {
           </div>
 
           {/* dropdown datacenter */}
-          <div className={`ml-6 ${navbarOpen ? "wiggle duration-500 flex flex-col" : "hidden"}`}>
+          <div className={`ml-6 ${navbarOpen ? "animate-wiggle flex flex-col" : "opacity-0"}`}>
             <a href="#" className="text-white text-sm cu hover:opacity-80">
               HyperVisor
             </a>

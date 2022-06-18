@@ -28,7 +28,7 @@ const Navbar = () => {
           </h1>
         </div>
         {/* menu */}
-        <div className="ml-14 mt-6 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-2">
+        <div className="ml-14 mt-6 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-2 translate-y-4 duration-500 ease-linear">
           <div className="flex justify-between mr-3 mb-8 cursor-pointer items-center hover:opacity-80">
             <div className="flex items-center">
               <img src={openstack} alt={openstack} className="w-4 mr-2" />
@@ -54,23 +54,18 @@ const Navbar = () => {
               <p
                 className={` ${
                   navbarOpen
-                    ? "text-amber-400 font-semibold"
+                    ? "text-amber-400 font-semibold raota duration-300"
                     : "text-white font-semibold"
                 }`}
               >
                 Data Center
               </p>
             </div>
-
-            {navbarOpen ? (
-              <MdKeyboardArrowDown className="text-amber-400 text-xl" />
-            ) : (
-              <MdKeyboardArrowRight className="text-white text-xl" />
-            )}
+              <MdKeyboardArrowRight className={`text-white text-2xl ${navbarOpen ? "rotate-90 duration-300 ease-linear" : "ease-in-out duration-300"}`} />
           </div>
 
           {/* dropdown datacenter */}
-          <div className={`ml-6 ${navbarOpen ? "flex flex-col" : "hidden"}`}>
+          <div className={`ml-6 ${navbarOpen ? "wiggle duration-500 flex flex-col" : "hidden"}`}>
             <a href="#" className="text-white text-sm cu hover:opacity-80">
               HyperVisor
             </a>

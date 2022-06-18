@@ -1,17 +1,16 @@
 import { Menu } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { BsBell } from "react-icons/bs";
 import Navbar from "../components/Navbar";
 
 const Requeslist = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = useState(false);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl(false);
   };
 
   return (
@@ -21,16 +20,16 @@ const Requeslist = () => {
         <div className="flex justify-end mb-3 cursor-pointer">
           <BsBell
             id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
+            aria-controls={anchorEl ? "basic-menu" : undefined}
             aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
+            aria-expanded={anchorEl ? "true" : undefined}
             onClick={handleClick}
-            className=" font-medium text-2xl"
+            className="text-amber-300 font-medium text-2xl"
           />
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
-            open={open}
+            open={anchorEl}
             onClose={handleClose}
             MenuListProps={{
               "aria-labelledby": "basic-button",
@@ -43,23 +42,41 @@ const Requeslist = () => {
           </Menu>
         </div>
         <div className="  text-white mt-16">
-          <table className=" table table-auto  bg-[#454343] w-full">
-            <thead className=" bg-[#454343] ">
+          <table className="table table-auto w-full">
+            <thead className=" bg-neutral-900">
               <tr className="">
-                <th className="border-2">No</th>
-                <th className="border-2">Name</th>
-                <th className="border-2">Status</th>
-                <th className="border-2">Type</th>
-                <th className="border-2">Memory</th>
-                <th className="border-2">Storage</th>
+                <th className="border-b">No</th>
+                <th className="border-b">Name</th>
+                <th className="border-b">Status</th>
+                <th className="border-b">Type</th>
+                <th className="border-b">Memory</th>
+                <th className="border-b">Storage</th>
               </tr>
             </thead>
             <tbody className=" text-center">
-              <tr className="border-2">
-                <td className="border-2">1</td>
-                <td className="border-2">1</td>
-                <td className="border-2">1</td> <td className="border-2">1</td>
-                <td className="border-2">1</td> <td className="border-2">1</td>
+              <tr className="border-b bg-zinc-800">
+                <td className="border-b">1</td>
+                <td className="border-b">1</td>
+                <td className="border-b">1</td> <td className="border-b">1</td>
+                <td className="border-b">1</td> <td className="border-b">1</td>
+              </tr>
+              <tr className="border-b bg-neutral-500">
+                <td className="border-b">2</td>
+                <td className="border-b">2</td>
+                <td className="border-b">2</td> <td className="border-b">2</td>
+                <td className="border-b">2</td> <td className="border-b">2</td>
+              </tr>
+              <tr className="border-b bg-zinc-800">
+                <td className="border-b">1</td>
+                <td className="border-b">1</td>
+                <td className="border-b">1</td> <td className="border-b">1</td>
+                <td className="border-b">1</td> <td className="border-b">1</td>
+              </tr>
+              <tr className="border-b bg-neutral-500">
+                <td className="border-b">2</td>
+                <td className="border-b">2</td>
+                <td className="border-b">2</td> <td className="border-b">2</td>
+                <td className="border-b">2</td> <td className="border-b">2</td>
               </tr>
             </tbody>
           </table>

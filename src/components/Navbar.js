@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-[#1F1616] w-[221px] h-screen">
+      <div className="bg-[#1F1616] w-1/5 h-screen">
         {/* logo */}
         <div className="flex mt-4 pl-3 pb-3 items-center border-b border-orange-500">
           <img
@@ -29,22 +29,24 @@ const Navbar = () => {
         </div>
         {/* menu */}
         <div className="ml-14 mt-6 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-2">
-          <div className="flex justify-between mr-6 mb-8 cursor-pointer items-center hover:opacity-80">
+          <div className="flex justify-between mr-3 mb-8 cursor-pointer items-center hover:opacity-80">
             <div className="flex items-center">
               <img src={openstack} alt={openstack} className="w-4 mr-2" />
               <p className="text-white font-semibold">OpenStack</p>
             </div>
             <MdKeyboardArrowRight className="text-white text-xl" />
           </div>
-          <div className="flex justify-between mr-6 mb-8 cursor-pointer items-center hover:opacity-80">
+
+          <div className="flex justify-between mr-3 mb-8 cursor-pointer items-center hover:opacity-80">
             <div className="flex items-center">
               <img src={vm} alt={vm} className="w-4 mr-2" />
               <p className="text-white font-semibold">VM Ware</p>
             </div>
             <MdKeyboardArrowRight className="text-white text-xl" />
           </div>
+
           <div
-            className="flex justify-between mr-6 mb-2 cursor-pointer items-center hover:opacity-80"
+            className="flex justify-between mr-3 mb-2 cursor-pointer items-center hover:opacity-80"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
             <div className="flex items-center">
@@ -66,6 +68,7 @@ const Navbar = () => {
               <MdKeyboardArrowRight className="text-white text-xl" />
             )}
           </div>
+
           {/* dropdown datacenter */}
           <div className={`ml-6 ${navbarOpen ? "flex flex-col" : "hidden"}`}>
             <a href="#" className="text-white text-sm cu hover:opacity-80">
@@ -80,9 +83,9 @@ const Navbar = () => {
           </div>
 
           {/* setting */}
-          <div className="flex items-center justify-between mr-6 mt-12 cursor-pointer">
+          <div className="flex mt-8 mr-3 mb-8 cursor-pointer items-center hover:opacity-80">
+            <AiOutlineSetting className="text-amber-300 ml-0 text-lg mr-2" />
             <p className="text-white font-semibold">Setting</p>
-            <AiOutlineSetting className="text-white text-lg" />
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import Requeslist from "./pages/Requeslist";
 
 function App() {
